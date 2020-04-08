@@ -15,6 +15,10 @@
 function isArray(value) {
     // YOUR CODE BELOW HERE //
     
+    // use Array.isArray to test value
+    // if passes return true
+    // if not, return false
+    
     if(Array.isArray(value)){
         return true;
     } else {
@@ -35,7 +39,15 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    if(typeof value === 'object' && Array.isArray(value) != true && value != Date() && value != null) {
+    
+    // we need to test all: object, array, null, date as they are all objects JS
+    // test if value os object and return true, if not false
+    // to test object use typeof operator
+    // to test array use Array.isArray
+    // date just compare value to Date() (!=)
+    // null, just compare to null (!=)
+    if(typeof value === 'object' && Array.isArray(value) != true 
+    && value != Date() && value != null) {
         return true;
     } else {
         return false; 
@@ -54,13 +66,15 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    // if(typeof value === 'object' || Array.isArray(value) === true && value != Date() && value != null) {
-    //     return true;
-    // } else {
-    //     return false; 
-    // }
     
-    if(Array.isArray(value) || typeof value === 'object' && value != Date() && value != null){
+    
+    // we have to test if true for object and array
+    // also we have to test that Date and null don't test true with value
+    // is all condition passes, return true
+    // if not return false
+    
+    if(Array.isArray(value) || typeof value === 'object' && value != Date() 
+    && value != null){
         return true;
     }
      return false;
@@ -89,6 +103,10 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
+    
+    // test value to each data type, 
+    //if true return the name of the data type as string
+    // to test valy we have to use correct mehtods or operators
     
     if(typeof value === 'string'){
         return 'string';
