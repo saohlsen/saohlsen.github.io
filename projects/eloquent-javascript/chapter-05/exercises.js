@@ -2,15 +2,22 @@
 // flatten /////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function flatten() {
-
+function flatten(arr) {
+  return arr.reduce(function(value, index) {
+   return value.concat(index);
+ });
 }
 
 // /////////////////////////////////////////////////////////////////////////////
 // loop ////////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function loop() {
+function loop(val, test, update, item) {
+  //for loop, start point at value, stop point will be iteam passing i
+   for (var i = val; test(i); i = update(i)) {
+    
+    item(i);
+  }
 
 }
 
@@ -18,15 +25,38 @@ function loop() {
 // every ///////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function every() {
-
+function every(arr, pred) {
+  for( var i = 0 ; i < arr.length ; i++ )
+	    if(!pred(arr[i])) return false;
+	  return true;
 }
 
 // /////////////////////////////////////////////////////////////////////////////
 // dominantDirection ///////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function dominantDirection() {
+function dominantDirection(text) {
+  
+  let arrayOfScripts = countBy(text, function(characterInText) {
+  //find script for each letter
+  const objOfScripts = characterScript(characterInText.charCodeAt());
+  
+
+  // if it belongs to a writting direction , return in our call back fucntion
+  // if it doesn't belong to a script, return 'non - alphabetic"
+  if(objOfScripts !== null) {
+    return objOfScripts.direction
+  }
+  return "non-alphabetic"
+  
+});
+
+// sort out array to find the hightest count value
+arrayOfScripts.sort(function(a,b) {
+  return b.count - a.count;
+})
+
+return arrayOfScripts[0].name;
 
 }
 
