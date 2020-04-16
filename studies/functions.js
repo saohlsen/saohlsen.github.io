@@ -1,120 +1,127 @@
-//0. Function
-/*
-Functions are reusable block of code, it's like a button you press to, or verb in the JavaScript.
-With functions you can group of statements together to perform a task we want. 
-DRY - do not repeat yourself. 
-There are two steps of a function: 
+/**
+* Functions - are wrapped block of code that can be reused over and over, 
+* and we do not have to rewrite the entire code every time we need to repeat. 
+* JavaScript has many built in functions like console.log or methods that are
+* also functions push() or pop().
+* To create function, we need to start with keyword function, follow by the name
+* (whatever we name it), and we can pass parameters inside the parentheses (), 
+* functions accept zero or more parameters, lastly in curly braces we can input 
+* code for action we want the function to perform.
+* This is called function declaration. 
+*/
 
+//Function declaration, zero parameters and calling function//
 
-1. Function declaration: four parts for function declaration.
-- Name
-- Parameter - they are optional, parameters are placeholder for arguments, when they can later
-be passed at the time of function call
-- Function body (where the code runs and where return statement can be placed. 
-- Return statement - also optional, the return statement will give value to the function call,
-and it can only be used in the function body
+function greeting(){
 
-// Function declaration
-function add(num1, num2) {
-	return num1 + num2;
 }
+console.log(greeting())  // prints => undefined
 
-Function without arguments and return statement as they are optional.
-Function without a return statement will return a default value 
-Arguments are also optional, if we don't pass a value, parameter is undefined.
-If we pass parameters (as many as we need) than they are in the signature, and we can use 
-arguments.
 
-function functionName () {
-  // Do stuff here
+
+//Function declaration, one parameter and calling function //
+
+function number(x){
+ console.log(x)
 }
+number(5)            // prints => 5
 
+/**
+* Function expression on the other hand does not have the name and has 
+* an anonymous function and is assigned to variable. 
+* It can be IIFE - Immediately Invoked Function Expression and runs when
+* defined. Expresions are not hoisted like functiondeclaration. 
+*/
 
-2. A function expression is similar to function declaration, the difference is the function name.
-Name can be omitted with function expression, than its called anonymous function, they can 
-be used to IIFE  - Immediately Invoked Function Expression, and it runs when it is defined. 
-Expressions can not be used before they are defined as they are not hoisted,
-function declarations on the other hand are hoisted. 
+// Function expression with two parameters
 
-
-// Function expression
-var add = function (num1, num2) {
-	return num1 + num2;
+var add = function (n1, n2) {
+	return n1 + n2;
 };
-
-
-3. Function Call is second step - to call the function we need to call by the function name, 
-followed by parenthesis (), that allows the code that is in the body of the function to run.
-Calling the function and declaring a function are two different things, if we do not call 
-nothing will happen. Its like if we do not press alarm button, it perform its action. 
-Function call, is also called as invoke a function. 
-We have to call/invoke, its called by function name, followed by arguments inside of ().
+add(2, 5)          // prints => 7
+/**
+* Parameters and Arguments - often confused, parameters are place
+* holders for arguments. We pass parameters at the time of function
+* declaration or expression, and arguments are values that
+* parameters receive when a function is invoked. 
+* In above example of add function expression, 2 and 5 are values
+* that were passed to parameters.  
 */
-
-// Function 
-
-function homework(par1, par2) {   
-    // here we have named function as => homework, that takes 2 parameters 
-  
-  return par1 + " " + "and" + " " + par2 + " " + 'are due on monday!' 
-  // body of the function, where we can input the return statement
-}
- homework('Scratch Pad', 'Studies') 
- // when calling a function by its name with arguments inside of ().
- // prints => Scratch Pad and Studies are due on monday!
  
-
-// 1. Scope
-/*
-Variables that are declared within a function can only be accessed WITHIN the function,
-therefore they have what is called a LOCAL scope. A variable that is defined OUTSIDE of
-the function have a GLOBAL scope.
-Function has access to variables in global scope, but variables that are created in function 
-scope cannot be accesed form global scope.
+/**
+* Hoisting - is pulling up. In JavaScript it means that function
+* can be used before is declared, but only function declaration,
+* and not function expression. 
 */
-
-// Global vs. Function Scope
-var country = 'USA';                // initialized variable in the global scope  
-function states () {                // function name with no par, creates function scope 
-  var city = 'New York';            // initialized variable in the local/function scope
-  let city1 = 'New Orleans';        // initialized let variable in the local/function scope
-  const city2 = 'Los Angeles'       // initialized const variable in the local/finction scope
-  
-  console.log(city);    // prints => New York, access within local scope
-  console.log(city1);   // prints => New Orleans, access within local scope
-  console.log(city2);   // prints => Los Angeles, access within local scope
-  console.log(country); // prints => USA, local scope has access to global scope
-}
-states ();  
-
-//console.log(city);     // prints => Refrence Error, global scope has no access to local scope
-//console.log(city1);    // prints => Refrence Error, global scope has no access to local scope
-//console.log(city2);    // prints => Refrence Error, global scope has no access to local scope 
-console.log(country);  // prints => USA, access within global scope
-
-// 1. Closure
-/*
-In Javascript all functions are objects, using exical scope.
-A closure is the blend of functions but fenced together by their scope,
-closure makes it possible for a function to have it's own set of private or LOCAL variables.
-Within the scope in which a function is created, it can access the local variables
-as well as other functions, and any of global variables declared OUTSIDE the function.
-The inner function created can access variables inside the outer function's scope.
-
-
-*/
-
-// add function with one parameter, that returns function with one parameter as well
-function add(num1) {
-  return function(num2) {
-    return num1 + num2;
-  };
+ 
+myName(); // an hoisting example
+ 
+function myName(){
+    console.log('My name is an hoisting example');
 }
 
-// add2 and add22 are closures that share the same function add base 
-// but have diffrent lexical environment.
-var add2 = add(2); 
-var add22 = add(22);
+showMe();
 
-console.log(add2(5));  // prints => 7
-console.log(add22(20)); // prints => 42
+/**
+* Scope - defines how and where variables can be accessed and used. 
+* In JavaScript there are three scopes: global, local/function, and 
+* block scope.
+* /
+
+/**
+* Global Scope - refers to a window object of JavaScript.
+* When variables is declared outside of function, it has global scope,
+* They are global variables. 
+*/
+
+var number = 10;    // has global scope and we can access form any scope.
+
+/**
+* Local Scope - also called function scope, variables that are declared
+* inside a function. Variable var is bound to local scope when declared
+* inside. 
+*/
+var name = 'Henry';
+
+function student() {
+    var name = ‘Mike';
+    console.log('name');       // prints => Mike, from local scope
+}
+
+student();
+console.log(name);             // prints => Henry, form global scope
+
+/**
+* Block Scope - refers to variables declared in block scope, like 
+* conditional statements or loops. Let and Const are variables that 
+* are used in block scope. 
+*/
+
+function student(name) {
+    if(name) {
+        let subject = 'JavaScript'; // block scope
+        console.log(subject);         // prints => JavaScript
+    }
+    
+console.log(subject); //prints => ReferenceError as is outside of local scope. 
+}
+
+student();
+
+
+/**
+* Closure - is present, when function is referencing variable in outer 
+* scope than they are declared. It stucks in outer scope inside the
+* inner. 
+* /
+
+var name = ‘Jack’;
+
+function student() {
+        let subject = 'JavaScript'; // block scope
+        return name + “ “ + is learning + ‘ “ + subject;        
+         
+}
+
+student(); 
+// function has access to variable name outside of local scope

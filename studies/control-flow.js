@@ -1,116 +1,103 @@
-
-/*
-* CONTROL FLOW:
-*
-* 0. Control Flow.
-* It is set order in which the computer completes statements by asking true or 
-* false questions. 
-* Statements are JacaScript sentances or commands, terminated wth semicolon. 
+/**
+* Control Flow - if/ else if/ and else chain statement or block
+* of code. It is one of the most often used statements. 
+* Condition evaluated has a boolean value, true or false. 
 */
 
-// Conditional Statement IF - Else if - Else
+// If chain - will always start the chain.//
+
 /*
-**** IF ***
-The if statement executes a statement if the condition is true, and stops the flow.
-Conditional statement will always need to start with If. 
-
-
-**** ELSE IF ****
-But if condition is false, another statement can be executed - Else if - if true, flow stops. 
-We can have multiple else if statements. 
-
-**** ELSE ****
-If else if condition is false, another statement can be executed using the else statement.
-It can only run if all prior conditions are false.
-Else can be a default statement to any of the block code.
-
-****Syntaax for if-else if-else chain
-
-
-if(condition ) {
-  what we want to do;
-}  else if (condition) {
-    What we want to do if else if is true;
-}    else {
-      Default action we want to do;
+if(condition) {
+  statement; 
 }
-
-
-The 'If'condition will determine if code that is in {} will run or not. 
-If code is true, it will run and it will stop execution.
-But if condition is false it will move to 'Else if' or 'Else' statement.
-We can have 0 or as many else if statements as we need,
-but only one 'If' and 'else' statement, 'else' statement is a default statement
-and will run when all previous condition are false
-
 */
 
+// Else if chain - will execute only if If statement is false//
 
-
-// IF Flow
-var store = 'open';
-if (store === 'open') {
-  console.log('Let\'s got shopping.');    // prints => Let's g shopping.
+/*
+if(condition) {
+ //statement; 
+}else if (condition){
+ //statement2;
 }
+*/
+    
+// Else chain - will evaluate only if all previous conditions are false. 
 
-// IF - Else if - Else Flow
-var language = "Spanish";
-if (language === 'English') {           // condition is in ()
-  console.log('I speak English.');      // action to be performed  
-} else if (language === 'German') {
-  console.log('I speak German.');
-} else if (language === 'Polish') {
-  console.log ('I speak Polish.')
+/*
+if(condition) {
+statement; 
+}else if (condition){
+statement2;
 } else {
-  console.log('I only speak English.')    // prints => I only speak English. 
+  //statement;
 }
+*/
 
-// If and Else flow only
-var hungry = true;
-if (hungry === false) {
-  console.log('Don\'t want to eat now');
+
+
+var x = 5, 
+    y = 5;
+if (x > y) {
+    console.log('x is greater than y');
+} else if (x < y) {
+    console.log('x is less than y');
 } else {
-  console.log('I need to eat now!')   // prints => I need to eat now. 
+    console.log('x is equal to y');
 }
 
-// Switch
-/*
-* It is similar statement to conditional, where we can execute many many code blocks. 
-*
+/**
+* Other option for conditional purpose in JavaScript are 
+* ternary operator. 
+* If condition evaluates true, than expression 1 will be valid, 
+* but if false the second expression will be valid. 
 */
 
-// Switch statement flow
+// condition ? expression_1 : expression_2
 
-/* We would use switch statement when we have long chain of condition, it will help 
-* to keep clean order. Below syntax, each code block must be followed by break,
-* and needs default statement that will run when all previous conditions are false.
-* 
-*switch(my expression) {
-*  case a:
-*    // code block we want to run
-*    break;
-*  case b:
-*    // code block we want to run
-*    break;
-*  default:
-*    // code block we want to run
-*}
+      var year = 1990;
+      var birthYears = year < 2010 ? true : false;
+      console.log(birthYears);// prints => true
+
+
+/**
+* Another option for conditional evaluation in JavaScript is
+* switch statement. It is best in use when we are looking for
+* only one condition. It must have a break after each statement
+* and must end with default, similar to else statement. Default
+* will run if all previous conditions are false. 
 */
 
+// switch (expression) {
+//     case value_1:
+//         statement_1;
+//         break;
+//     case value_2:
+//         statement_2;
+//         break;
+//     case value_3:
+//         statement_3;
+//         break;
+//     default:
+//         default_statement;
+// }
 
-var dress = 'pink';
-switch(dress) {
+
+
+var color = 'yellow';
+switch(color) {
   case 'green':
-    console.log('She has green dress.'); // code block
+    console.log('I like green color.'); // code block
     break;
   case 'red':
-    console.log('She has red dress.');  // code block
+    console.log('I like red color.');  // code block
     break;
   case 'black':
-    console.log('She has black dress.');  // code block 
+    console.log('I like black color.');  // code block 
     break;  
   default:
-    console.log('She needs to buy dress.');
-    // prints => She needs to buy new dress, reads default condition as all before are false.
+    console.log('I like all colors.');
+    // prints => I like all colors. // reads default,as all before are false.
     
 }
+
