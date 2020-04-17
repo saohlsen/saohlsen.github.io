@@ -1,8 +1,8 @@
 /*
 * OPERATORS:
 *
-* 0. Operators are expressed by symbols that are used to perform an action, to assign 
-or compare values. 
+* 0. Operators are expressed by symbols that are used to perform an action, 
+to assign or compare values. 
 * They allow to create a single value form other one or more values.
 */
 // 1.  Binary Operator
@@ -46,7 +46,8 @@ console.log(num2)  // prints => 0
 
 // 4. Comparison operators 
 /*
-* Used in conditional statements to determine if equal or not between variables or value 
+* Used in conditional statements to determine if equal or not between variables
+or value 
 *
 * ==	equal to
 * ===	equal value and equal type
@@ -112,7 +113,7 @@ otherwise it returns the expression_2
 // Syntax
 // condition ? value_if_true : value_if_false
 
-true ? true : false  // prints => true
-true ? false : false // prints => false
+true ? true : false;  // prints => true
+true ? false : false; // prints => false
 
 

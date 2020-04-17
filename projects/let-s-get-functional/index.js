@@ -22,16 +22,82 @@ var _ = require( 'lodown-saohlsen');
  */
 
 var maleCount = function(array) {
-
+    //using filter find the number of males cusotemrs in our list
+    let arrOfMales = _.filter(array, function(customerObj){
+        //filter all of the male cusotemrs
+        //each custoemrObj has a gender prop
+        return customerObj.gender === "male";
+    }).length;
+    
+    return arrOfMales;
+    
+  //console.log(arrOfMales);
 };
 
-var femaleCount;
+// ### 2: `femaleCount`
+//  - **Objective**: Find the number of female customers
+//  - **Input**: `Array`
+//  - **Output**: `Number`
+//  - **Constraints**: use `reduce`
 
-var oldestCustomer;
+var femaleCount = function(array){
+    return _.reduce(array, function(prev, current) {
+        return prev + (current.gender == 'female');
+    }, 0);
+};
 
-var youngestCustomer;
 
-var averageBalance;
+var oldestCustomer = function(array) {
+    var max = 0;
+    return _.reduce(array, function(nr, customerObj) {
+        if(customerObj.age >= max) {
+            nr = customerObj.name;
+            max = customerObj.age;
+        }
+        return nr;}, "");
+
+ };
+
+
+var youngestCustomer = function(array){
+ var min = Infinity;
+ return _.reduce(array, function(nr, customerObj){  /// nr => prev value, customerObj => current value
+     if(customerObj.age <= min) {
+         nr = customerObj.name;
+         min = customerObj.age;
+     }
+     return nr;}, "");
+     
+ };
+
+
+// ### 5: `averageBalance`
+//  - **Objective**: Find the average balance of all customers
+//  - **Input**: `Array`
+//  - **Output**: `Number`
+//  - **Constraints**:
+
+
+//  using filter
+var averageBalance = function(array) {
+    let balance = 0;
+    _.filter (array, function(element, index, array){
+        balance += parseFloat(element.balance.replace(/\$/g,'').replace(/\,/g,''));
+    });
+    return balance / array.length; 
+};
+
+
+// using avarage
+// var avarageBalance = function(array) {
+//     _.reduce(array, function(prev, current){
+//         let balance = parseFloat(current.balance.replace(/\$/g,'').replace(/\,/g,''));
+//         return balance; 
+//     },0);
+// };
+
+
+
 
 var firstLetterCount;
 

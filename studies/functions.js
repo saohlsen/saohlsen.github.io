@@ -15,16 +15,16 @@
 function greeting(){
 
 }
-console.log(greeting())  // prints => undefined
+console.log(greeting());  // prints => undefined
 
 
 
 //Function declaration, one parameter and calling function //
 
 function number(x){
- console.log(x)
+ console.log(x);
 }
-number(5)            // prints => 5
+number(5);           // prints => 5
 
 /**
 * Function expression on the other hand does not have the name and has 
@@ -38,7 +38,7 @@ number(5)            // prints => 5
 var add = function (n1, n2) {
 	return n1 + n2;
 };
-add(2, 5)          // prints => 7
+add(2, 5);         // prints => 7
 /**
 * Parameters and Arguments - often confused, parameters are place
 * holders for arguments. We pass parameters at the time of function
@@ -60,7 +60,7 @@ function myName(){
     console.log('My name is an hoisting example');
 }
 
-showMe();
+myName();
 
 /**
 * Scope - defines how and where variables can be accessed and used. 
@@ -74,22 +74,22 @@ showMe();
 * They are global variables. 
 */
 
-var number = 10;    // has global scope and we can access form any scope.
+var num = 10;    // has global scope and we can access form any scope.
 
 /**
 * Local Scope - also called function scope, variables that are declared
 * inside a function. Variable var is bound to local scope when declared
 * inside. 
 */
-var name = 'Henry';
+var name1 = 'Henry';
 
 function student() {
-    var name = ‘Mike';
-    console.log('name');       // prints => Mike, from local scope
+    var name1 = 'Mike';
+    console.log(name1);       // prints => Mike, from local scope
 }
 
 student();
-console.log(name);             // prints => Henry, form global scope
+console.log(name1);             // prints => Henry, form global scope
 
 /**
 * Block Scope - refers to variables declared in block scope, like 
@@ -97,31 +97,31 @@ console.log(name);             // prints => Henry, form global scope
 * are used in block scope. 
 */
 
-function student(name) {
+function studentHistory(name) {
     if(name) {
-        let subject = 'JavaScript'; // block scope
+        var subject = 'JavaScript'; // block scope
         console.log(subject);         // prints => JavaScript
     }
     
 console.log(subject); //prints => ReferenceError as is outside of local scope. 
 }
 
-student();
+studentHistory();
 
 
-/**
+/*
 * Closure - is present, when function is referencing variable in outer 
 * scope than they are declared. It stucks in outer scope inside the
 * inner. 
-* /
+*/
 
-var name = ‘Jack’;
+var name1 = 'Jack';
 
-function student() {
+function studentMath() {
         let subject = 'JavaScript'; // block scope
-        return name + “ “ + is learning + ‘ “ + subject;        
+        return name1 + ' ' + 'is learning' + ' ' + subject;        
          
 }
 
-student(); 
+studentMath(); 
 // function has access to variable name outside of local scope

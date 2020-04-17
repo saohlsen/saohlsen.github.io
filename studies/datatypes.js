@@ -6,8 +6,8 @@
 * - complex data: object, array.  
 */
 
-var day = ‘sunday’; // day has value of string
-day = ‘true’;       // day now has boolean value    
+var day = 'sunday'; // day has value of string
+day = 'true';       // day now has boolean value    
 day = 22;           // day now has number value
 
 // Primitive //

@@ -47,7 +47,7 @@ var greeting = 'Good Day!';
 console.log(greeting);         // prints => Good Day!  // from local scope
 }
 greet(); 
-console.log(greet)         // prints => “Hello!”   // from global scope
+console.log(greet);         // prints => “Hello!”   // from global scope
 
 
 /**
@@ -65,7 +65,7 @@ console.log(greet)         // prints => “Hello!”   // from global scope
 var word = 'word';
 
 for(let i = 0; i < word.length; i++) {
-  let name = word[i];
+  var name = word[i];
 }
 console.log(name);         // prints => RefrenceError: name not defined 
 
@@ -79,4 +79,4 @@ console.log(name);         // prints => RefrenceError: name not defined
 //1. Const //  
 const birthYear = 2009;
 birthYear = 2007;
-console.log(birthYear)     // prints => TypeError
+console.log(birthYear);     // prints => TypeError
