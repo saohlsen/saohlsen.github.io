@@ -304,18 +304,27 @@ _.unique = function (array){
 *   use _.each in your implementation
 */
 
-_.filter = function(array, fun) {
-    // create array literal
-    let arr = [];
-    // cykle over and add the result of a fucntion call to new array
-    for(let i = 0; i < array.length; i++){
-        if(fun(array[i], i, array)){
-            arr.push(array[i]);
+// _.filter = function(array, fun) {
+//     // create array literal
+//     let arr = [];
+//     // cykle over and add the result of a fucntion call to new array
+//     for(let i = 0; i < array.length; i++){
+//         if(fun(array[i], i, array)){
+//             arr.push(array[i]);
+//         }
+//     }
+//     // return new array
+//     return arr; 
+// };
+_.filter = function(array, func) {
+    var aFinal = [];
+   _.each(array, function(item, index, array) {
+        if (func(item, index, array)) {
+            aFinal.push(item);
         }
-    }
-    // return new array
-    return arr; 
-};
+    })
+    return aFinal;
+}
 
 
 
@@ -405,23 +414,55 @@ _.partition = function(array, fun){
 */
 
 
-_.map = function(collection, func) {
+// _.map = function(collection, func) {
     
-    // create array literal
-    let outcome = [];
-    // test if is an array, and cykle over an array
-    if (Array.isArray(collection)) {
-        for (let i = 0; i <= collection.length-1; i++) {
-            outcome.push(func(collection[i], i, collection));
-        }
-    } else {
-        // if not an array cykle over an object
-        for (let key in collection) {
-            outcome.push(func(collection[key], key, collection));
-        }
-    }
-    return outcome;
+//     // create array literal
+//     let outcome = [];
+//     // test if is an array, and cykle over an array
+//     if (Array.isArray(collection)) {
+//         for (let i = 0; i <= collection.length-1; i++) {
+//             outcome.push(func(collection[i], i, collection));
+//         }
+//     } else {
+//         // if not an array cykle over an object
+//         for (let key in collection) {
+//             outcome.push(func(collection[key], key, collection));
+//         }
+//     }
+//     return outcome;
+// };
+
+
+// shorter version of above
+
+
+_.map = function(collection, func){
+   let finalArr = [];
+    _.each(collection, function(item, index, array){
+        finalArr.push(func(item, index, collection));
+    });
+    return finalArr;
 };
+
+
+// _.map = function(collection, func){
+
+//     let finalArr = [];
+//   _.each(collection, function(item, index, collection){
+//       finalArr.push(func(item, index, collection));
+        
+//     });
+//     return finalArr;
+// };
+
+
+// function map(collection, func) {
+//   let resultArr = [];
+//   each(collection, function(item, index, array){
+//     resultArr.push(func(item, index, array))
+//   })
+//   return resultArr;       
+// }
 
 
 

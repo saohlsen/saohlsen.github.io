@@ -2,12 +2,13 @@
 * Functions - are wrapped block of code that can be reused over and over, 
 * and we do not have to rewrite the entire code every time we need to repeat. 
 * JavaScript has many built in functions like console.log or methods that are
-* also functions push() or pop().
+* also functions push() and pop().
 * To create function, we need to start with keyword function, follow by the name
 * (whatever we name it), and we can pass parameters inside the parentheses (), 
 * functions accept zero or more parameters, lastly in curly braces we can input 
 * code for action we want the function to perform.
 * This is called function declaration. 
+* 
 */
 
 //Function declaration, zero parameters and calling function//
