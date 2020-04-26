@@ -1,4 +1,11 @@
-/**
+/*
+*
+*
+********************************************************************************
+*                                VARIABLES                                     *
+********************************************************************************
+*
+*
 * Variable  - are container or place holders for any type of data. 
 * In JavaScript declare variable, assign value to the variable, or just declare
 * and initialize 
@@ -80,3 +87,28 @@ console.log(name);         // prints => RefrenceError: name not defined
 const birthYear = 2009;
 birthYear = 2007;
 console.log(birthYear);     // prints => TypeError
+
+/**
+ * Hoisting /Var, let & Const
+ * In Javascript hoisting is where variable declaration is lifted to the top of
+ * the program, but only declaration is hoisted and accessible, 
+ * this does not apply for initialization.
+ 
+var - if declared in global scope, has global access but if declared in 
+function scope, has a local scope and is bound to the local scope. 
+
+Let and const - are hoisted to the top of their block scope.
+*/
+ 
+var name = 'Jack';    // variable defined in global scope
+function group(){
+var myName = 'Mark'; // variable defined on local scope
+console.log(name, myName); // => prints Jack Mark
+}
+group();
+//console.log(name, myName) => it will print an error, myName is not defined. 
+//as myName is declared in function/local scope and can not be accessed from 
+//global scope
+
+
+

@@ -1,4 +1,14 @@
+
 /*
+*
+*
+*
+********************************************************************************
+*                           OPERATORS                                          *
+********************************************************************************
+*
+*
+*
 * OPERATORS:
 *
 * 0. Operators are expressed by symbols that are used to perform an action, 
@@ -101,9 +111,17 @@ true || false;      // prints => true
 false && false;     // prints => false
 false == !true;      // prints => true
 
+// 6. Unary Operators
 
+/* Unary operators take a single argument, most common examples are:
+* ! / !! : Bang Operator
+*/
 
-// 6. Teranary 
+let v = v;
+v != v // => false
+v = !v // => true
+
+// 7. Teranary 
 /* The JavaScript ternary operator is the only operator that takes three operands.
 *The condition is an expression that evaluates to a Boolean value, either true or false. 
 *If the condition is true , the ternary operator returns expression_1 , 

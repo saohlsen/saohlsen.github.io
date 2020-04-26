@@ -1,10 +1,27 @@
-/**
+/*
+*
+*
+*
+********************************************************************************
+*                             CONTROL FLOW                                     *
+********************************************************************************                             
+*
+*
+*
 * Control Flow - if/ else if/ and else chain statement or block
 * of code. It is one of the most often used statements. 
 * Condition evaluated has a boolean value, true or false. 
 */
 
-// If chain - will always start the chain.//
+// If //
+
+/** If chain - will always start the chain and evaluate if a specific condition 
+* is true, but if the first condition is false, code runs to the next condition 
+* If-Else If. Code chain is read from top to bottom and there can be as many 
+* conditions as needed. 
+* Code will stop to evaluate at the first true condition found in the chain. 
+* /
+
 
 /*
 if(condition) {
@@ -12,7 +29,12 @@ if(condition) {
 }
 */
 
-// Else if chain - will execute only if If statement is false//
+// Else if//
+
+/** 
+ * Else if chain - will execute only if If statement is false, 
+ * we can have many Else If as needed. 
+ * /
 
 /*
 if(condition) {

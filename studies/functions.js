@@ -1,4 +1,13 @@
-/**
+/*
+*
+*
+* 
+********************************************************************************
+*                               FUNCTIONS                                      *
+********************************************************************************
+*
+*
+*
 * Functions - are wrapped block of code that can be reused over and over, 
 * and we do not have to rewrite the entire code every time we need to repeat. 
 * JavaScript has many built in functions like console.log or methods that are
@@ -115,14 +124,15 @@ studentHistory();
 * scope than they are declared. It stucks in outer scope inside the
 * inner. 
 */
+function students() {
+let name1 = 'Jack'; // name1 is local variable in parent scope
 
-var name1 = 'Jack';
-
-function studentMath() {
+function studentMath() { 
+    // studentMath is closure in the student function
         let subject = 'JavaScript'; // block scope
-        return name1 + ' ' + 'is learning' + ' ' + subject;        
-         
+        console.log(name1 + ' ' + 'is learning' + ' ' + subject);        
+         //the name1 variable from local student scope is avilable here
 }
-
-studentMath(); 
-// function has access to variable name outside of local scope
+studentMath();  // call inner function so it will start its task
+}
+student(); // call outher function so it will start its task

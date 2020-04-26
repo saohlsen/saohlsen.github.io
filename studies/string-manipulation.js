@@ -1,5 +1,13 @@
 
-/** 
+/*
+*
+*
+********************************************************************************
+*                            STRING MANIPULATION                               *
+********************************************************************************
+*
+*
+*
 * String Manipulation
 * In JavaScript strings are objects, therefore strings can be
 * manipulated by using methods on them. Methods are functions, 
@@ -41,6 +49,17 @@ var movie = string.search(/is/);
 console.log(movie); // 2
 
 
+// split() - Converting a String to an Array
+
+var str = "January, Februeary, March";
+console.log(str.split(" ")); // split no space
+console.log(str.splice(",")); // split with comma
+
+
+//   indexOf()  - returns the index of (the position of) the first occurrence 
+// of a specified text in a string, if nothing found returns -1.
+ var drink = "coffee";
+ console.log(drink.indexOf("f")); // prints => 2
 
 
 // Operators or escape notations.

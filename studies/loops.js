@@ -1,4 +1,14 @@
+
 /*
+*
+*
+*
+********************************************************************************
+*                                   LOOPS                                      *                  
+********************************************************************************
+*
+*
+*
 * LOOPS:
 *
 * 0. Loops are used to execute the same block of code many times until the 
@@ -10,7 +20,7 @@ JavaScript now supports many different types of loops:
 // 1. For Loop //
 /* 
 A For loop has three parameters: start, end, and number of iterations.
-For loop is mainly performed on arrays and strings.
+For loop is performed on arrays and strings.
 
 - Start point — it is a start counter variable, evaluates only once when it starts.
 - Stop point — it represents the end point when the condition is met. 
@@ -63,7 +73,8 @@ console.log(obj[key]); // => prints Gaby, orchid, 2, false
 /*
 While loop executes a block of code as long as the test condition is true and 
 when the condition becomes false, the statement inside the loop stops executing.
-False outcome stops the condition 
+False outcome stops the condition. To break out of the While loop, the 
+Incrementor(or Decrementor) has to be set, if not it will cause an infinite loop.
 */
 
 var num1 = 0;

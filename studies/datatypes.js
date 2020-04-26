@@ -1,4 +1,13 @@
-/**
+/*
+*
+*
+*
+********************************************************************************
+*                               DATA TYPES                                     *
+********************************************************************************
+*
+*
+*
 * Data Types  -  are values that are assigned to variables. 
 * In JavaScript we have two types of data types: 
 * - primitive : null, undefined, boolean, number, string,
@@ -40,8 +49,19 @@ console.log(age); // prints => null
 * we can manipulate numeric values using arithmetic expressions
 * Additionally, in JavaScript there is Infinity and - Infinity 
 * it represents the finite numbers, on both sides negative and
-* positive.  
+* positive. When we add or multiply by Infinity, it will return Infinity. 
+* Any positive number when divided by Infinity will return zero.
+* Any infinity value that is multiplied by negative value will return -Infinity.
 */
+
+var isInfinity = Infinity;
+console.log(isInfinity * 2); // prints => Infinity
+console.log(isInfinity + 123); // prints => Infinity
+console.log(9 / isInfinity); // prints => zero
+console.log(isInfinity * -5); // prints -Infinity
+
+
+
 var myNum = 5; // regular number
 var num = 1.5; // Decimal number
 var sum = myNum + num; // Mathematical Expressions
