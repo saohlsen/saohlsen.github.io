@@ -58,34 +58,22 @@ var isEven = function(n) {
 // sumBelow(10); // 45
 // sumBelow(7); // 21
 //var sumBelow = function(n) {
+
+
   //if n = 0, return 0
   //*call twice? one for n greater than zero,
   //range, with one end always being zero.
   //different arrangement for negs?
   //return n + (function(n-1)) <<<<Don't want the first iteration of n to get counted.
   //n-1 +sum(n-1) //fancy stop condition.
-   //When n + 0 @ the base case, (hypothesis, when n = 1, not when n =0) //I was wrong here
+   //When n + 0 @ the base case, (hypothesis, when n = 1, not when n =0) 
    
-   
-   
-  // if(y -x === 2) {
-  //   return [x + 1];
-  // } else if (y - x === []) {
-  //   return [];
-  // }
-  
-  // else {
-  //   let rangeList = range(x + 1, y);
-  //   rangeList.unshift(x + 1);
-  //   return rangeList;
-  // }
 
 var sumBelow = function(number) {
   // base case
   if (number === 0) return 0; 
   
   // recursive case
-  //
   number = number > 0 ? number - 1 : number + 1;
   return number + sumBelow(number);
 };
@@ -194,32 +182,6 @@ var reverse = function(string) {
 // 10. Write a function that determines if a string is a palindrome.
 // var palindrome = function(string) {
   
-//   //base case:string is empty, string.length is one or zero
-//   //if case for false, first equal last, using case
-// //We run a loop, that has a conditional, that if it is a space, remove it?
-// //make it ignore spaces in the check
-//   string = string.replace(' ', '')
-//   if(string === '' || string.length===1) {
-//     return true
-//   }
-//   if(string[0].toUpperCase() !== string[string.length-1].toUpperCase()) {
-//     return false
-//   }
-//   //recursive: call function by itself, passing string
-//     //before return, put an if check, and if the next value that we'll identify is a space, we exclude that int he slice
-//   // if(string[1] === ' ' && string[string.length-2] === ' ') {
-//   //   return palindrome(string.slice(2, string.length-1))
-//   // } else if (string[1] === ' ') {
-//   //   return palindrome(string.slice(2, string.length-1))
-//   // } else if (string[string.length-2] === ' ') {
-//   //   return palindrome(string.slice(1, string.lenth-2))
-//   // }
-//   return palindrome(string.slice(1, string.length-1))
-  
-  
-// };
-
-
 var palindrome = function (str) {
   // remove non-alphanumeric characters and
   // change the string to lowercase
@@ -286,21 +248,9 @@ var gcd = function(x, y) {
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
 
-// const compareStr = (str1, str2) => {
-//   if (str1 === '' & str2 ==='')
-//     return true;
-
-//   if (str1.substring(0, 1) !== str2.substring(0, 1)) {
-//     return false;
-//   } else {
-//     return compareStr(str1.substring(1), str2.substring(1));
-//   }
-// }
-
-
 
 var compareStr = function(str1, str2) {
-
+//base case 
   if(str1==='' && str2===''){
     return true;
   }
@@ -320,25 +270,16 @@ var compareStr = function(str1, str2) {
 // 16. Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
 var createArray = function(str){
-// // base case: when str has length prop, return str
-// // when str has length property 0, return [] or true
-// if (str.length === 1) return [str];
-// if (str.length === 0) return true;
+// base case: when str has length prop, return str
+// when str has length property 0, return [] or true
 
-// // recursive case: 
-// // return character at the 0 index of a string
-// // use concat with the recursive call
-// // in rec call, pass string with slice form positiona 1
-// // to glue the rest of a string
- 
- 
- 
- //base case
-  // str.length
-  // return str
   if(str.length === 1) return [str];
   if(str.length === 0) return [];
-  //recursive
+  // recursive case: 
+// return character at the 0 index of a string
+// use concat with the recursive call
+// in rec call, pass string with slice form positiona 1
+// to glue the rest of a string
   return [str.slice(0, 1)].concat(createArray(str.slice(1)));
 
 };
@@ -354,8 +295,7 @@ var reverseArr = function (array) {
   //recursive
     //use slice to remove from end of array
     //once we runout concat will chain them in reverse order
-  return (array.slice(array.length-1).concat(reverseArr(array.slice(0,array.length-1))))
-
+return (array.slice(array.length-1).concat(reverseArr(array.slice(0,array.length-1))));
 
 };
 
@@ -383,7 +323,8 @@ var buildList = function(value, length) {
 var countOccurrence = function(array, value) {
   
     //if the array at zero isn't the value, remove it from the recursion.
-  //the base case, is a loop that runs through array, and if every value of array is equal value, it returns array.length
+  //the base case, is a loop that runs through array, and if every value of 
+  //array is equal value, it returns array.length
   //recursive, if the element doesnt equal value, we return the array without it.
   //base
     //if array.length = 0, return 0
@@ -397,9 +338,9 @@ var countOccurrence = function(array, value) {
   if(!array.length) return 0;
   //recursive
   if(value !== array[0]) {
-    return countOccurrence(array.slice(1), value)
+    return countOccurrence(array.slice(1), value);
   }
-  return 1 + countOccurrence(array.slice(1), value)
+  return 1 + countOccurrence(array.slice(1), value);
   
 };
 
@@ -574,7 +515,8 @@ var minimizeZeroes = function(array) {
    //base case, return array literal at length zero
   if(array.length===0) return [];
   //recursive
-  //starting a counter here, setting it to 1 so if the array[0] isn't a zero, it slices regulary
+  //starting a counter here, setting it to 1 so if the array[0] isn't a zero, 
+  //it slices regulary
   let zeroCount = 1;
   //if we're dealing with a zero we need to check the next index
   if(array[0] === 0) {
@@ -598,43 +540,7 @@ var minimizeZeroes = function(array) {
 //var alternateSign = function(array) {
   
   
-  
-//   var alternateSign = function(array) {
-//   //I'm adding a counter for the negative sign
-//   //base case
-//   if(array.length === 0) {
-//     return []
-//   }
-//   //recursive case
-//   // if(counter % 2 === 0) {
-//   // counter ++
-//   // return [array[0]].concat(alternateSign(array.slice(1), counter))
-//   // } else {
-//   // counter ++
-//   // return [array[0]*-1].concat(alternateSign(array.slice(1), counter))
-//   // }
-//   //maybe do the regular, and on the final return tack on a method with a functin like each or map to change every other to -1
-//   // return [array[0]].concat(alternateSign(array.slice(1))).map(function(value, index, collection) {
-//   //   if (index % 2 === 0) {
-//   //     return collection[index]
-//   //   }
-//   //   else {
-//   //     return -1*collection[index]
-//   //   }
-//   // })
-//   //Ok, trying this again with what I've learned from the lecture on Friday
-//   // if(count === 'p') {
-//   //   count === 'n';
-//   //   return [array[0]].concat(alternateSign(array.slice(1), count));
-//   // }
-//   // else {
-//   //   count === 'p';
-//   //   return [array[0]*-1].concat(alternateSign(array.slice(1), count));
-//   // }
-//   //for some reason that didn't work, so here we go again
-//   return [array[0]].concat([array[1]*-1]).concat(alternateSign(array.slice(2)))
-// };
-// //};
+
 
 
 var alternateSign = function(array) {
@@ -676,50 +582,51 @@ var numToText = function(str) {
     return '';
   }
   //recursive case
-    //trickier. I don't need to check if its a letter. I think I just make a big if statement to run each character through?
+    //trickier. I don't need to check if its a letter. I think I just make a
+    //big if statement to run each character through?
     //zero
     if(str[0] === '0') {
-      return 'zero' + numToText(str.slice(1))
+      return 'zero' + numToText(str.slice(1));
     }
     //one
      else if(str[0] === '1') {
-      return 'one' + numToText(str.slice(1))
+      return 'one' + numToText(str.slice(1));
     }
     //two
      else if(str[0] === '2') {
-      return 'two' + numToText(str.slice(1))
+      return 'two' + numToText(str.slice(1));
     }
     //three
      else if(str[0] === '3') {
-      return 'three' + numToText(str.slice(1))
+      return 'three' + numToText(str.slice(1));
     }
     //four
      else if(str[0] === '4') {
-      return 'four' + numToText(str.slice(1))
+      return 'four' + numToText(str.slice(1));
     }
     //five
      else if(str[0] === '5') {
-      return 'five' + numToText(str.slice(1))
+      return 'five' + numToText(str.slice(1));
     }
     //six
      else if(str[0] === '6') {
-      return 'six' + numToText(str.slice(1))
+      return 'six' + numToText(str.slice(1));
     }
     //seven
      else if(str[0] === '7') {
-      return 'seven' + numToText(str.slice(1))
+      return 'seven' + numToText(str.slice(1));
     }
     //eight
      else if(str[0] === '8') {
-      return 'eight' + numToText(str.slice(1))
+      return 'eight' + numToText(str.slice(1));
     }
     //nine
      else if(str[0] === '9') {
-      return 'nine' + numToText(str.slice(1))
+      return 'nine' + numToText(str.slice(1));
     }
     //none of the above
      else {
-      return str[0] + numToText(str.slice(1))
+      return str[0] + numToText(str.slice(1));
     }
   
   
