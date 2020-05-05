@@ -25,7 +25,8 @@ var sum = function(array) {
   // stop array.lenght === 0
   // return 0, we try to return number
   
-  if(array.length === 0) return 0;
+  if(array.length === 0) 
+  return 0;
   
   return array[0] + sum(array.slice(1));
   
@@ -547,23 +548,13 @@ var alternateSign = function(array) {
   //I'm adding a counter for the negative sign
   //base case
   if(array.length === 0) {
-    return []
+    return [];
   }
- let pos = Math.abs(array[0])
- let neg = Math.abs(array[1])
+ let pos = Math.abs(array[0]);
+ let neg = Math.abs(array[1]);
  neg = -1*neg;
-  return [pos].concat([neg]).concat(alternateSign(array.slice(2)))
+  return [pos].concat([neg]).concat(alternateSign(array.slice(2)));
 };
-
-
-
-
-
-
-
-
-
-
 
 
 
